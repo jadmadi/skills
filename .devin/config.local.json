@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Exec(ls)",
-      "Exec(git add)"
+      "Exec(git add)",
+      "Exec(git commit)",
+      "Exec(./scripts/validate-skill.sh codebase-artifact)"
     ]
   }
 }

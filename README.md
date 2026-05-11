@@ -105,7 +105,7 @@ Example (bad):
 
 | Skill | Description | Status |
 |-------|-------------|--------|
-| *(add your skills here)* | | |
+| [codebase-artifact](skills/codebase-artifact/) | Scan a codebase and produce a self-contained HTML architecture document with SVG diagrams | ready |
 
 ## License
 
