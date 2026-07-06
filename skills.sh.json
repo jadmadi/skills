@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Cloudflare Workers",
+      "description": "Audits for Cloudflare Workers CPU usage and D1 database performance/billing.",
+      "skills": ["cf-cpu-audit", "cf-d1-audit"]
+    },
+    {
+      "title": "Workflow",
+      "description": "Structured problem-solving and pre-ship checklists for backend and full-stack work.",
+      "skills": ["adoo", "pre-flight-check"]
+    }
+  ]
+}
