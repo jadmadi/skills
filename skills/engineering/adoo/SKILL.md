@@ -4,7 +4,7 @@ description: Structured problem-solving via the ADOO method (Assess, Deconstruct
 license: MIT
 metadata:
   author: jadmadi
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # ADOO: Assess, Deconstruct, Organize, Optimize
@@ -88,6 +88,7 @@ Implement and verify. Output: the fix plus evidence it works.
 
 - For each candidate root cause from stage 3, propose the smallest fix that addresses it. No speculative refactors.
 - If multiple fixes are possible, pick the one with the smallest blast radius.
+- **Apply domain audit knowledge during implementation, not after.** If this task touches a domain where a dedicated audit skill exists and is available (e.g., `cf-cpu-audit` for Cloudflare Workers CPU patterns, `cf-d1-audit` for D1 query/billing patterns), apply that skill's checklist *while writing the fix* — don't save it for a separate post-implementation audit pass. The rules are cheaper to follow while writing than to retrofit after. If no audit skill applies to this domain, skip this step silently.
 - Before implementing, state one concrete way this fix could fail, regress, or add debt — then address it or explicitly accept the risk. A fix with no identified downside usually means insufficient scrutiny, not a risk-free fix.
 - Implement the fix.
 - Verify: reproduction case now passes, existing tests pass, no new errors introduced. If the reproduction was manual (a curl command, a manual click-through), promote it to an automated regression test — a fix checked once by hand isn't verified, it's hoped for.
@@ -96,6 +97,7 @@ Implement and verify. Output: the fix plus evidence it works.
 
 Checklist before done:
 - [ ] Smallest sufficient fix implemented
+- [ ] Domain audit rules applied during implementation (if a relevant audit skill exists for this domain)
 - [ ] One failure mode of the fix identified and addressed or explicitly accepted
 - [ ] Reproduction case verified fixed and captured as an automated regression test (or documented why that isn't possible here)
 - [ ] Existing tests pass
