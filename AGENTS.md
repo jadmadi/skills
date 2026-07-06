@@ -91,3 +91,20 @@ If a new skill is added:
 4. Run `scripts/link-skills.sh` to pick it up locally.
 
 If a decision gets made about what *not* to add to a skill (an idea considered and rejected, not just skipped silently), write it to `.out-of-scope/<topic>.md` rather than only in the commit message — see `.out-of-scope/adoo-stage-5-and-via-negativa.md` for the shape.
+
+## Versioning
+
+Two layers:
+
+- **Per-skill tags** (`adoo@1.1.0`, `cf-cpu-audit@1.0.0`, etc.) track each skill independently. The tag name matches the skill's directory name; the version matches the `metadata.version` field in its `SKILL.md`. Tag the skill whenever its `metadata.version` bumps.
+- **Repo-level milestone tags** (`v1.0.0`, `v1.1.0`, etc.) mark release points where the collection as a whole is in a shippable state. Bump the repo version when a meaningful set of skill changes has accumulated, not on every individual skill bump.
+
+Use [Keep a Changelog](https://keepachangelog.com/) format in `CHANGELOG.md`: a section per skill with version headings, plus a "Repo milestones" section for the repo-level tags. Record what changed and why, not just what — "added pre-mortem step to Optimize" is useful, "updated SKILL.md" is not.
+
+**When to bump a skill's version** (semantic versioning):
+
+- **Patch** (`1.0.0` → `1.0.1`): typo fixes, wording clarifications, reference doc updates — anything that doesn't change what the skill *does*.
+- **Minor** (`1.0.0` → `1.1.0`): new steps, new checklist items, new trigger phrases, expanded coverage — the skill does more or does it better, but existing usage still works the same way.
+- **Major** (`1.0.0` → `2.0.0`): a stage is renamed or removed, the invocation syntax changes, or existing behavior is replaced rather than extended. Existing users would need to adjust how they invoke or follow the skill.
+
+When you bump a skill's version: update `metadata.version` in its `SKILL.md`, add a `CHANGELOG.md` entry, commit, tag as `<skill-name>@<version>`, and push the tag. When you bump the repo version: tag as `v<version>`, push, and optionally create a GitHub Release from the tag with the relevant CHANGELOG section as release notes.
