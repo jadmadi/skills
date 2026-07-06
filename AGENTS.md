@@ -14,8 +14,9 @@ These skills must work across agents (Claude Code, Cursor, Windsurf, Codex, Devi
 
 ```
 skills/<bucket>/<skill-name>/SKILL.md   # one skill per directory, grouped into buckets
-TEMPLATE/SKILL.md                       # scaffold for new skills -- marked `metadata.internal:
-                                         # true` (see below) so it's never listed as installable
+TEMPLATE/SKILL.md.template              # scaffold for new skills -- deliberately NOT named
+                                         # SKILL.md (see below) so it can never be discovered
+                                         # as an installable skill
 skills.sh.json                          # groups skills into sections on the skills.sh repo page
 README.md                               # top-level human-facing catalog
 skills/<bucket>/README.md               # per-bucket catalog
@@ -29,7 +30,9 @@ Structure follows [mattpocock/skills](https://github.com/mattpocock/skills)'s bu
 
 Add a new bucket when a skill doesn't fit an existing one — don't force everything into `engineering` just to avoid creating a folder, and don't create a bucket for a single skill unless more in that space are clearly coming (the way `cloudflare/` was justified by there already being a second Cloudflare-specific skill, not just one). If a skill isn't ready to publish yet or is being retired, mirror mattpocock's `in-progress/` / `deprecated/` buckets rather than half-shipping it in a promoted one.
 
-**A directory anywhere in this repo containing a file literally named `SKILL.md` with a valid `name`+`description` is installable, full stop** — confirmed by reading the `skills` CLI's own discovery code (`discoverSkills` in [vercel-labs/skills](https://github.com/vercel-labs/skills)'s `src/skills.ts`): it scans the repo root's direct subdirectories unconditionally, not just paths under `skills/`. There is no location that hides a file named `SKILL.md` from it. The one real exclusion mechanism is frontmatter: `metadata.internal: true` (a literal YAML boolean, not a quoted string — that's what their own test fixtures use) hides a skill from discovery unless `INSTALL_INTERNAL_SKILLS=1` is set or it's requested by exact name. This is why `TEMPLATE/SKILL.md` carries that flag, and why `create-skill.sh` strips it back out when scaffolding a real skill (an unstripped `internal: true` would make the new skill silently never install for anyone).
+**A directory anywhere in this repo containing a file literally named `SKILL.md` with a valid `name`+`description` is installable, full stop** — confirmed by reading the `skills` CLI's own discovery code (`discoverSkills` in [vercel-labs/skills](https://github.com/vercel-labs/skills)'s `src/skills.ts`): it scans the repo root's direct subdirectories unconditionally, not just paths under `skills/`.
+
+The CLI also documents `metadata.internal: true` as a way to hide a skill from discovery unless `INSTALL_INTERNAL_SKILLS=1` is set or it's requested by exact name. **Don't rely on that flag alone** — it's inconsistently honored across the CLI's own code paths in practice (a plain `--list` respects it; the interactive "select skills to install" prompt, reached via the default `npx skills add jadmadi/skills` with no flags, does not — verified against a real install, twice, not just by reading the source). The actual, reliable fix used here: `TEMPLATE`'s scaffold file is named `SKILL.md.template`, not `SKILL.md`, so no discovery code path can find it regardless of flags or bugs in a specific one. `create-skill.sh` renames it to `SKILL.md` (and strips the `internal: true` line it also carries as defense in depth) only when scaffolding a real skill. If you ever add another non-shippable `SKILL.md`-shaped file to this repo, give it the same treatment — don't trust `internal: true` as the only line of defense.
 
 ## Adding or editing a skill
 

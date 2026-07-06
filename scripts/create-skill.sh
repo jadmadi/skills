@@ -26,22 +26,25 @@ if [[ -d "$SKILL_DIR" ]]; then
     exit 1
 fi
 
-if [[ ! -d "$TEMPLATE_DIR" ]]; then
-    echo "Error: TEMPLATE directory not found at $TEMPLATE_DIR"
+if [[ ! -f "$TEMPLATE_DIR/SKILL.md.template" ]]; then
+    echo "Error: TEMPLATE/SKILL.md.template not found at $TEMPLATE_DIR"
     exit 1
 fi
 
-mkdir -p "$SKILLS_DIR/$BUCKET"
-cp -r "$TEMPLATE_DIR" "$SKILL_DIR"
+mkdir -p "$SKILL_DIR"
+cp -r "$TEMPLATE_DIR"/. "$SKILL_DIR"/
+# The template is named SKILL.md.template, not SKILL.md, on purpose (see
+# AGENTS.md) -- rename it into a real skill file here.
+mv "$SKILL_DIR/SKILL.md.template" "$SKILL_DIR/SKILL.md"
 
 # Replace placeholder name in SKILL.md -- must match the directory name per
 # the Agent Skills spec (https://agentskills.io/specification)
 sed -i "s/name: template-skill/name: $SKILL_NAME/g" "$SKILL_DIR/SKILL.md"
 
-# TEMPLATE is marked `internal: true` so the `skills` CLI's discovery never
-# lists it as an installable skill (see AGENTS.md). A real skill created
-# from it must NOT inherit that -- drop the line, or it would silently never
-# show up for anyone installing this repo.
+# TEMPLATE also carries `internal: true` as defense in depth. A real skill
+# created from it must NOT inherit that -- drop the line, or (should the
+# file ever get renamed to SKILL.md by mistake elsewhere) it would silently
+# never show up for anyone installing this repo.
 sed -i "/^  internal: true$/d" "$SKILL_DIR/SKILL.md"
 
 echo "Created new skill: $SKILL_DIR"
