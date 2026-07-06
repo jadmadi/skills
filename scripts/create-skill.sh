@@ -3,8 +3,9 @@
 
 set -euo pipefail
 
-SKILLS_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/skills"
-TEMPLATE_DIR="$SKILLS_DIR/TEMPLATE"
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SKILLS_DIR="$REPO_DIR/skills"
+TEMPLATE_DIR="$REPO_DIR/TEMPLATE"
 
 if [[ $# -ne 2 ]]; then
     echo "Usage: $(basename "$0") <bucket> <skill-name>"

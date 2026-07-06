@@ -7,4 +7,4 @@ set -euo pipefail
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 
 cd "$REPO"
-find skills -name SKILL.md -not -path '*/TEMPLATE/*' | sort
+find skills -name SKILL.md | sort

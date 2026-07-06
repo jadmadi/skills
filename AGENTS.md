@@ -14,7 +14,11 @@ These skills must work across agents (Claude Code, Cursor, Windsurf, Codex, Devi
 
 ```
 skills/<bucket>/<skill-name>/SKILL.md   # one skill per directory, grouped into buckets
-skills/TEMPLATE/SKILL.md                # scaffold for new skills (not a real skill, not bucketed)
+TEMPLATE/SKILL.md                       # scaffold for new skills -- lives outside skills/
+                                         # on purpose: the `skills` CLI discovers anything
+                                         # with a valid SKILL.md under skills/, and a
+                                         # placeholder with "[Step one]" etc. in its body
+                                         # is not something anyone should be able to install
 skills.sh.json                          # groups skills into sections on the skills.sh repo page
 README.md                               # top-level human-facing catalog
 skills/<bucket>/README.md               # per-bucket catalog

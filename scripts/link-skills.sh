@@ -23,15 +23,16 @@ DESTS=(
   "$HOME/.cursor/skills"
 )
 
-# Collect the repo's skills once (skip TEMPLATE -- it's a scaffold, not a
-# shipped skill), link into every destination that exists on this machine.
+# Collect the repo's skills once, link into every destination that exists
+# on this machine. TEMPLATE lives at the repo root, outside skills/, so it's
+# naturally excluded here -- it's a scaffold, not a shipped skill.
 names=()
 srcs=()
 while IFS= read -r -d '' skill_md; do
   src="$(dirname "$skill_md")"
   names+=("$(basename "$src")")
   srcs+=("$src")
-done < <(find "$REPO/skills" -mindepth 2 -name SKILL.md -not -path '*/TEMPLATE/*' -print0)
+done < <(find "$REPO/skills" -mindepth 2 -name SKILL.md -print0)
 
 for DEST in "${DESTS[@]}"; do
   if [[ ! -d "$DEST" ]]; then
