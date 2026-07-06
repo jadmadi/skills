@@ -38,6 +38,12 @@ cp -r "$TEMPLATE_DIR" "$SKILL_DIR"
 # the Agent Skills spec (https://agentskills.io/specification)
 sed -i "s/name: template-skill/name: $SKILL_NAME/g" "$SKILL_DIR/SKILL.md"
 
+# TEMPLATE is marked `internal: true` so the `skills` CLI's discovery never
+# lists it as an installable skill (see AGENTS.md). A real skill created
+# from it must NOT inherit that -- drop the line, or it would silently never
+# show up for anyone installing this repo.
+sed -i "/^  internal: true$/d" "$SKILL_DIR/SKILL.md"
+
 echo "Created new skill: $SKILL_DIR"
 echo ""
 echo "Next steps:"

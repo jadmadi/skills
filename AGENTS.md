@@ -14,11 +14,8 @@ These skills must work across agents (Claude Code, Cursor, Windsurf, Codex, Devi
 
 ```
 skills/<bucket>/<skill-name>/SKILL.md   # one skill per directory, grouped into buckets
-TEMPLATE/SKILL.md                       # scaffold for new skills -- lives outside skills/
-                                         # on purpose: the `skills` CLI discovers anything
-                                         # with a valid SKILL.md under skills/, and a
-                                         # placeholder with "[Step one]" etc. in its body
-                                         # is not something anyone should be able to install
+TEMPLATE/SKILL.md                       # scaffold for new skills -- marked `metadata.internal:
+                                         # true` (see below) so it's never listed as installable
 skills.sh.json                          # groups skills into sections on the skills.sh repo page
 README.md                               # top-level human-facing catalog
 skills/<bucket>/README.md               # per-bucket catalog
@@ -31,6 +28,8 @@ Structure follows [mattpocock/skills](https://github.com/mattpocock/skills)'s bu
 - `cloudflare/` — Cloudflare Workers / D1 specific audits
 
 Add a new bucket when a skill doesn't fit an existing one — don't force everything into `engineering` just to avoid creating a folder, and don't create a bucket for a single skill unless more in that space are clearly coming (the way `cloudflare/` was justified by there already being a second Cloudflare-specific skill, not just one). If a skill isn't ready to publish yet or is being retired, mirror mattpocock's `in-progress/` / `deprecated/` buckets rather than half-shipping it in a promoted one.
+
+**A directory anywhere in this repo containing a file literally named `SKILL.md` with a valid `name`+`description` is installable, full stop** — confirmed by reading the `skills` CLI's own discovery code (`discoverSkills` in [vercel-labs/skills](https://github.com/vercel-labs/skills)'s `src/skills.ts`): it scans the repo root's direct subdirectories unconditionally, not just paths under `skills/`. There is no location that hides a file named `SKILL.md` from it. The one real exclusion mechanism is frontmatter: `metadata.internal: true` (a literal YAML boolean, not a quoted string — that's what their own test fixtures use) hides a skill from discovery unless `INSTALL_INTERNAL_SKILLS=1` is set or it's requested by exact name. This is why `TEMPLATE/SKILL.md` carries that flag, and why `create-skill.sh` strips it back out when scaffolding a real skill (an unstripped `internal: true` would make the new skill silently never install for anyone).
 
 ## Adding or editing a skill
 

@@ -5,6 +5,7 @@ description: |
   [trigger word 1], [trigger word 2], or [trigger context].
 license: MIT
 metadata:
+  internal: true
   author: jadmadi
   version: "1.0.0"
 ---
