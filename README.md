@@ -59,6 +59,16 @@ Each skill is a directory under `skills/<bucket>/<name>/` containing:
 - `references/` — supporting documentation loaded on demand (optional)
 - `assets/` — templates or files used in output (optional)
 
+## Credits
+
+This repo's conventions were learned from others, not invented here:
+
+- **[mattpocock/skills](https://github.com/mattpocock/skills)** (Matt Pocock) — the bucket layout (`skills/<bucket>/<name>/`), per-bucket `README.md`s, `scripts/link-skills.sh` / `scripts/list-skills.sh`, and the [`.out-of-scope/`](.out-of-scope/) convention for recording rejected ideas instead of only in commit messages are all adapted directly from his repo. His [`writing-great-skills`](https://github.com/mattpocock/skills/blob/main/skills/productivity/writing-great-skills/SKILL.md) skill and its glossary also shaped how the skills here are written — description hygiene, cutting duplication, and the vocabulary for what makes a skill predictable rather than just plausible-sounding.
+- **[vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)** — the `skills.sh.json` grouping format and the general shape of this README (badge, "what it does / use when" summaries per skill) come from theirs.
+- **[Agent Skills specification](https://agentskills.io/)** — the open format every skill here implements, and the source for the authoring best-practices this repo tries to follow.
+
+If you're setting up your own skills repo, all three are worth reading directly.
+
 ## License
 
 MIT

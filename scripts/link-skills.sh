@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Adapted from mattpocock/skills' scripts/link-skills.sh:
+# https://github.com/mattpocock/skills/blob/main/scripts/link-skills.sh
+#
 # Links every skill in this repo into the local skill directories used by
 # each agent harness on this machine, via symlink. Because it's a symlink
 # into this repo (not a copy), a `git pull` is all that's needed to keep
