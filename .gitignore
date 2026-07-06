@@ -1,10 +1,26 @@
+# OS
 .DS_Store
-node_modules/
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
 *.log
 
-# skill-creator eval workspaces (local iteration artifacts, not for publishing)
-*-workspace/
+# Node artifacts (if scripts use npm)
+node_modules/
+package-lock.json
 
-# personal local-sync tool (pushes canonical skills to this machine's other
-# tool configs) - machine-specific, not part of the published skill collection
-scripts/sync-local.sh
+# Python artifacts (if scripts use Python)
+__pycache__/
+*.pyc
+.venv/
+
+# Eval workspaces (generated during skill testing)
+*-workspace/
