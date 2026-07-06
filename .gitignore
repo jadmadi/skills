@@ -4,3 +4,7 @@ node_modules/
 
 # skill-creator eval workspaces (local iteration artifacts, not for publishing)
 *-workspace/
+
+# personal local-sync tool (pushes canonical skills to this machine's other
+# tool configs) - machine-specific, not part of the published skill collection
+scripts/sync-local.sh

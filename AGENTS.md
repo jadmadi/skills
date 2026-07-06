@@ -34,6 +34,18 @@ Follow the [Agent Skills specification](https://agentskills.io/specification):
 - Only add content the agent wouldn't already know or do by default — a line that restates default behavior ("be thorough", "handle errors appropriately") costs tokens without changing anything. Prefer a specific, concrete instruction over a generic exhortation.
 - Never publish project-specific secrets, internal domain names, or proprietary business logic. If a skill started life as a checklist for one specific codebase, generalize it (parameterize the specifics, keep the *shape* of the check) before it lands here — see `skills/pre-flight-check/SKILL.md` for an example of a genericized template.
 
+## Keeping other local copies in sync
+
+Some of these skills also live as plain copies in this machine's other tool
+configs (`~/.claude/skills`, `~/.config/devin/skills`, etc.), predating this
+repo. `scripts/sync-local.sh` (gitignored — machine-specific, not part of
+the published collection) pushes this repo's canonical content out to any
+of those that already exist, without installing into new locations unless
+asked. Once these skills are installed via `npx skills add jadmadi/skills`
+(see README.md) and kept current with `skills update`, the CLI manages its
+own local copy and symlinks it into each agent's directory — at that point
+this script has nothing left to reconcile and can be deleted.
+
 ## Validating
 
 There's no npm package for this yet. The reference validator is a Python tool
