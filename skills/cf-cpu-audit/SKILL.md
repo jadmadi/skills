@@ -4,13 +4,11 @@ description: >-
   Scan a Cloudflare Workers repository for operations that excessively consume
   CPU time limits. Identifies global scope misses, memory buffering, pure-JS
   crypto, blocking iterations, and missing waitUntil() deferral. Use when the
-  user mentions "CPU audit", "CPU time", "worker performance", "edge compute
-  optimization", "V8 isolate optimization", "Workers CPU limit", "reduce CPU
-  time", "optimize worker", "cf cpu audit", "scan for CPU bottlenecks", or
-  says things like "why is my worker slow", "hitting CPU limits", "optimize my
-  worker", "review my worker for performance", or wants a performance review of
-  Cloudflare Workers code. Even if they just say "make my worker faster" or
-  "review my worker for performance", use this skill.
+  user mentions "CPU audit", "CPU time", "V8 isolate optimization", "Workers
+  CPU limit", or "edge compute optimization", or says things like "why is my
+  worker slow", "hitting CPU limits", "optimize my worker", or "make my worker
+  faster". Also use for any general performance review of Cloudflare Workers
+  code, even if the user doesn't name CPU time specifically.
 license: MIT
 metadata:
   author: jadmadi
@@ -164,7 +162,7 @@ export async function onRequest({ request, env, ctx }) {
 
 For every bottleneck found, provide:
 
-1. **The exact file path and surrounding code context** — use `<ref_snippet>` tags
+1. **The exact file path and line numbers**, with the relevant code quoted inline (use your tool's file-citation syntax if it has one)
 2. **A concise explanation of the CPU tax it incurs** — why it's expensive in a V8 isolate
 3. **A refactored code block** utilizing Cloudflare-native APIs or optimized structural patterns
 

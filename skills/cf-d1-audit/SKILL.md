@@ -7,13 +7,10 @@ description: >-
   that should be batched, wildcard SELECTs, wrong extraction methods (.first vs
   .all vs .raw), massive unbatched mutations, read-after-write hazards, and
   missing upsert opportunities. Use when the user mentions "D1 audit", "D1
-  optimization", "D1 performance", "rows read", "rows written", "D1 billing",
-  "D1 cost", "database query optimization", "D1 index", "D1 batch", "D1
-  consistency", "read-your-writes", "D1 limits", "optimize my D1 queries",
-  "reduce D1 bill", "D1 best practices", or says things like "my D1 queries are
-  slow", "hitting D1 row limits", "D1 timeout", "D1 overloaded", or wants a
-  database performance review of Cloudflare Workers code. Even if they just say
-  "audit my database" or "optimize my queries", use this skill.
+  billing" or "D1 cost", "rows read" or "rows written", "D1 index", "D1 batch",
+  "read-your-writes" consistency, or "D1 limits", or says things like "my D1
+  queries are slow", "D1 timeout", "D1 overloaded", "audit my database", or
+  "optimize my queries".
 license: MIT
 metadata:
   author: jadmadi

@@ -1,6 +1,6 @@
 ---
 name: adoo
-description: Structured problem-solving via the ADOO method (Assess, Deconstruct, Organize, Optimize). Invoke with /adoo followed by a task, bug report, feature request, or problem description. Use when the user types "/adoo", or when tackling complex bugs, multi-step refactors, unclear requirements, production incidents, performance investigations, or any task where jumping straight to implementation feels risky. Also triggers on "use ADOO", "assess first", "deconstruct this", "break this down systematically", or when a problem spans multiple files/systems and the root cause is unknown.
+description: Structured problem-solving via the ADOO method (Assess, Deconstruct, Organize, Optimize). Invoke with /adoo followed by a task, bug report, feature request, or problem description. Use when the user types "/adoo" or "use ADOO", or when tackling complex bugs, multi-step refactors, unclear requirements, production incidents, performance investigations, or any task where jumping straight to implementation feels risky — especially when a problem spans multiple files/systems and the root cause is unknown.
 license: MIT
 metadata:
   author: jadmadi
