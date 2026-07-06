@@ -3,6 +3,10 @@ name: template-skill
 description: |
   Brief description of what this skill enables. Use when the user mentions
   [trigger word 1], [trigger word 2], or [trigger context].
+license: MIT
+metadata:
+  author: jadmadi
+  version: "1.0.0"
 ---
 
 # Template Skill

@@ -6,6 +6,10 @@ description: |
   polished visual artifact. Use when the user says "document this codebase",
   "generate a codebase overview", "visualize project architecture", "create a
   project map", "codebase audit", or wants an HTML summary of a project structure.
+license: MIT
+metadata:
+  author: jadmadi
+  version: "1.0.0"
 ---
 
 # Codebase Artifact Agent

@@ -3,14 +3,14 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Cloudflare Workers",
-      "description": "Audits for Cloudflare Workers CPU usage and D1 database performance/billing.",
-      "skills": ["cf-cpu-audit", "cf-d1-audit"]
+      "title": "Engineering",
+      "description": "Debugging, pre-ship checklists, and codebase documentation.",
+      "skills": ["adoo", "pre-flight-check", "codebase-artifact"]
     },
     {
-      "title": "Workflow",
-      "description": "Structured problem-solving and pre-ship checklists for backend and full-stack work.",
-      "skills": ["adoo", "pre-flight-check"]
+      "title": "Cloudflare",
+      "description": "Audits for Cloudflare Workers CPU usage and D1 database performance/billing.",
+      "skills": ["cf-cpu-audit", "cf-d1-audit"]
     }
   ]
 }
