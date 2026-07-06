@@ -88,15 +88,19 @@ Implement and verify. Output: the fix plus evidence it works.
 
 - For each candidate root cause from stage 3, propose the smallest fix that addresses it. No speculative refactors.
 - If multiple fixes are possible, pick the one with the smallest blast radius.
+- Before implementing, state one concrete way this fix could fail, regress, or add debt — then address it or explicitly accept the risk. A fix with no identified downside usually means insufficient scrutiny, not a risk-free fix.
 - Implement the fix.
-- Verify: reproduction case now passes, existing tests pass, no new errors introduced.
+- Verify: reproduction case now passes, existing tests pass, no new errors introduced. If the reproduction was manual (a curl command, a manual click-through), promote it to an automated regression test — a fix checked once by hand isn't verified, it's hoped for.
+- If the root cause was a wrong assumption written down somewhere (a comment, README, AGENTS.md), correct it. Otherwise the next session inherits the same mistake.
 - If the fix doesn't work, return to stage 3 with the new information. Do not pile on more changes hoping one sticks.
 
 Checklist before done:
 - [ ] Smallest sufficient fix implemented
-- [ ] Reproduction case verified fixed
+- [ ] One failure mode of the fix identified and addressed or explicitly accepted
+- [ ] Reproduction case verified fixed and captured as an automated regression test (or documented why that isn't possible here)
 - [ ] Existing tests pass
 - [ ] No unrelated changes introduced
+- [ ] Any documentation that stated the wrong assumption corrected (if applicable)
 - [ ] If fix failed, returned to stage 3 instead of patching forward
 
 ## Anti-patterns
@@ -106,3 +110,4 @@ Checklist before done:
 - Implementing multiple fixes at once. If it works you won't know which one mattered, and if it breaks you won't know which one caused it.
 - Moving to Optimize with "unknown" components on the critical path. Investigate first.
 - Asking permission between every stage. Print findings and proceed unless the user interrupts.
+- Fixing the bug but leaving the reproduction case as a one-off manual check. The next regression goes uncaught.
