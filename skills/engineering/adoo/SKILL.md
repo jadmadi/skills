@@ -4,7 +4,7 @@ description: Structured problem-solving via the ADOO method (Assess, Deconstruct
 license: MIT
 metadata:
   author: jadmadi
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # ADOO: Assess, Deconstruct, Organize, Optimize
@@ -21,7 +21,7 @@ When invoked with a task, treat the user's input as the problem statement seed. 
 
 If invoked without a task (`/adoo` alone), ask the user what they want to work on.
 
-At each stage transition, print a brief summary of findings before proceeding. This gives the user a chance to correct course before you commit to the next stage.
+At each stage transition, print a brief summary of findings before proceeding. This gives the user a chance to correct course before you commit to the next stage. If working on a complex issue or across multiple sessions, consider recording these stage outputs in a persistent artifact (e.g., `adoo_run.md`) to maintain state.
 
 ## When NOT to use
 
@@ -35,18 +35,18 @@ At each stage transition, print a brief summary of findings before proceeding. T
 
 Gather data before forming opinions. Output: a written problem statement.
 
-- Reproduce the issue reliably. If you can't reproduce, say so.
+- If dealing with a bug, reproduce the issue reliably (if you can't, say so). If dealing with a feature or refactor, define the explicit acceptance criteria.
 - Read the actual code, logs, and error messages. Do not rely on summaries from others or prior context.
-- Identify symptoms (what the user sees) vs root cause (what's actually broken). They are rarely the same.
-- State assumptions explicitly. Mark each as "verified" or "unverified."
+- For bugs, identify symptoms (what the user sees) vs root cause (what's actually broken). For features, contrast current state vs desired state.
+- State assumptions explicitly. Mark each as "verified" or "unverified." **Cite your evidence for "verified" assumptions (e.g., "verified - tested in terminal").**
 - Write a one-sentence problem statement: "X happens because Y, confirmed by Z."
 
 Print the problem statement before moving to stage 2.
 
 Checklist before moving on:
-- [ ] Problem reproduced or reproduction attempted with documented results
+- [ ] Bug reproduced, or feature/refactor acceptance criteria explicitly defined
 - [ ] Read the actual source files involved (not summaries)
-- [ ] Symptoms distinguished from root cause
+- [ ] Symptoms distinguished from root cause (or current vs desired state)
 - [ ] Problem statement written
 
 ### 2. Deconstruct
@@ -61,17 +61,17 @@ Break the problem into independent parts you can analyze separately. Output: a l
 Print the component list before moving to stage 3.
 
 Checklist before moving on:
-- [ ] Problem split into 3+ components (or documented why fewer)
+- [ ] Problem split into meaningful components along real boundaries (not just an arbitrary count)
 - [ ] Each component has a yes/no test ("could this be the failure?")
 - [ ] Unknowns listed explicitly
 
-### 3. Organize
+### 3. Organize (Critical Path Isolation)
 
-Map how the components interact. Output: a dependency graph or ordered sequence.
+Map how the components interact to isolate the fault. Output: a dependency graph or ordered sequence.
 
 - Order components by data flow: what happens first, what depends on what.
 - Identify the critical path: the minimum chain of components that must all work for the feature to work.
-- Mark each component as: working, broken, or unknown.
+- Mark each component as: working, broken, or unknown. **You must cite the evidence for "working" or "broken" components (e.g., "working - covered by passing test X" or "working - manually verified via curl").**
 - The bug lives in a "broken" or "unknown" component on the critical path. Components off the critical path or marked "working" are not the issue.
 
 Print the ordered component map with labels before moving to stage 4.
@@ -93,7 +93,7 @@ Implement and verify. Output: the fix plus evidence it works.
 - Implement the fix.
 - Verify: reproduction case now passes, existing tests pass, no new errors introduced. If the reproduction was manual (a curl command, a manual click-through), promote it to an automated regression test — a fix checked once by hand isn't verified, it's hoped for.
 - If the root cause was a wrong assumption written down somewhere (a comment, README, AGENTS.md), correct it. Otherwise the next session inherits the same mistake.
-- If the fix doesn't work, return to stage 3 with the new information. Do not pile on more changes hoping one sticks.
+- If the fix doesn't work, return to stage 3 with the new information. If the original problem statement or component map is invalidated by new findings, roll all the way back to stage 1. Do not pile on more changes hoping one sticks.
 
 Checklist before done:
 - [ ] Smallest sufficient fix implemented
@@ -103,7 +103,14 @@ Checklist before done:
 - [ ] Existing tests pass
 - [ ] No unrelated changes introduced
 - [ ] Any documentation that stated the wrong assumption corrected (if applicable)
-- [ ] If fix failed, returned to stage 3 instead of patching forward
+- [ ] If fix failed, rolled back to stage 3 (or stage 1) instead of patching forward
+
+## Worked Example
+
+**1. Assess**: "User reports login fails. Bug reproduced: submitting form returns 500. Logs show `Connection refused` to DB. Problem statement: Login fails because the DB connection is refused, confirmed by backend error logs."
+**2. Deconstruct**: Split by system boundary: 1. Frontend form, 2. Auth API, 3. DB Network, 4. DB Service.
+**3. Organize**: Critical path (Data flow): Form -> API -> DB Network -> DB Service. Labels: Form (working - valid payload sent per network tab), API (working - receives payload per logs), DB Network (unknown), DB Service (unknown).
+**4. Optimize**: Investigated DB Network; found missing firewall rule. Fix: Add rule. Verify: Login now succeeds. Failure mode addressed: Added automated regression test for login to catch future firewall regressions.
 
 ## Anti-patterns
 
