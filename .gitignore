@@ -24,3 +24,6 @@ __pycache__/
 
 # Eval workspaces (generated during skill testing)
 *-workspace/
+
+# Workspace-local knowledge store (managed by sila)
+.sila/

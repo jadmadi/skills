@@ -1,0 +1,2 @@
+PASS: YAML, name, description, entrypoint budget, 25 guides, 25 unique links
+Candidate SHA256 (sorted path/NUL/file-hash/LF): b9ddd7f379b9cab634147168d8b3158a48a1b812805911041015e088fe043aec

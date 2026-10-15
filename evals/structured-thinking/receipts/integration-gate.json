@@ -1,0 +1,101 @@
+{
+  "clean": false,
+  "checks": [
+    {
+      "name": "tests",
+      "status": "skip",
+      "detail": "no test command detected in AGENTS.md or manifest"
+    },
+    {
+      "name": "format",
+      "status": "pass",
+      "detail": "no Go manifest; gofmt check not applicable"
+    },
+    {
+      "name": "changelog",
+      "status": "pass",
+      "detail": "no comparable source/CHANGELOG history yet"
+    },
+    {
+      "name": "knowledge",
+      "status": "pass",
+      "detail": "no unrecorded session friction detected; knowledge store up to date"
+    },
+    {
+      "name": "scar-tissue",
+      "status": "pass",
+      "detail": "diff clean across 10 architectural rule(s) (7 files, 259 lines scanned)"
+    },
+    {
+      "name": "charter-sentry",
+      "status": "pass",
+      "detail": "no active goal charter constraints"
+    },
+    {
+      "name": "surface-guard",
+      "status": "pass",
+      "detail": "staged files (3) adhere to exclusive write-surface boundaries"
+    },
+    {
+      "name": "reviewer-veto",
+      "status": "pass",
+      "detail": "no active reviewer vetoes"
+    },
+    {
+      "name": "rule-of-five",
+      "status": "pass",
+      "detail": "no active claimed goals requiring completion verification"
+    },
+    {
+      "name": "rebase-drift",
+      "status": "pass",
+      "detail": "no active claimed goals requiring rebase drift sentry"
+    },
+    {
+      "name": "decisions",
+      "status": "pass",
+      "detail": "all decision addresses unique (0 total, 0 open)"
+    },
+    {
+      "name": "contract-check",
+      "status": "pass",
+      "detail": "no staged Go source files requiring contract verification"
+    },
+    {
+      "name": "test-selector",
+      "status": "pass",
+      "detail": "no code modifications requiring targeted tests"
+    },
+    {
+      "name": "arch-sentry",
+      "status": "pass",
+      "detail": "clean across SRP file weights, edge anti-patterns, and epistemic fact grounding (scanned in 3ms)"
+    },
+    {
+      "name": "rtl-sentry",
+      "status": "skip",
+      "detail": "no active RTL invariant or Arabic locale declared"
+    },
+    {
+      "name": "cf-worker-sentry",
+      "status": "skip",
+      "detail": "no Cloudflare Worker configuration (wrangler.json/jsonc/toml) detected"
+    },
+    {
+      "name": "cfclean",
+      "status": "skip",
+      "detail": "no Cloudflare Worker configuration detected"
+    },
+    {
+      "name": "rules-budget",
+      "status": "pass",
+      "detail": "clean within 24 KB ceiling (1 warning(s): GEMINI.md not found; run `sila install` or `sila agents sync` to provision GEMINI.md -\u003e AGENTS.md symlink)"
+    },
+    {
+      "name": "provenance-sentry",
+      "status": "pass",
+      "detail": "verified 23 citation(s) across 8 file(s) (13 uncataloged warning(s))"
+    }
+  ],
+  "tier": "full"
+}

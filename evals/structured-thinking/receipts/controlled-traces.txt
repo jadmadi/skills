@@ -1,0 +1,5 @@
+FILE /tmp/structured-thinking-eval.KNJQS0/controlled-baseline.jsonl
+{"command":"/usr/bin/bash -lc 'cat six-cases.json'","exit":0,"output_bytes":1475,"output_sha256":"4fc38055fea5a2c807bfebea708e9db624d6f4609b02c99c4fdd9b4987edd71c"}
+FILE /tmp/structured-thinking-eval.KNJQS0/controlled-with-skill.jsonl
+{"command":"/usr/bin/bash -lc 'cat six-cases.json .agents/skills/structured-thinking/SKILL.md'","exit":0,"output_bytes":9337,"output_sha256":"659b0cbcd435212cf08f126b89605ee0a6ebb73c5d05a60c64ee66f5996ef374"}
+{"command":"/usr/bin/bash -lc 'cat .agents/skills/structured-thinking/references/decision-matrix.md .agents/skills/structured-thinking/references/connection-circles.md .agents/skills/structured-thinking/references/hard-choice-model.md .agents/skills/structured-thinking/references/cynefin.md .agents/skills/structured-thinking/references/confidence-speed-quality.md'","exit":0,"output_bytes":8644,"output_sha256":"e793018e88edcb0246a186d94c6cff4bc1f38e834a54a268475f3625e3abb797"}

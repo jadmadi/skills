@@ -2,6 +2,19 @@
 
 Per-skill changes. Repo-level milestone tags (`v1.0.0`, etc.) mark release points where the collection as a whole is in a shippable state; per-skill tags (`adoo@1.1.0`, etc.) track individual skill versions and match the `metadata.version` field in each `SKILL.md`.
 
+## structured-thinking
+
+Unreleased, 2026-10-14.
+
+- Added 25 independently installable named method skills, including
+  st-six-hats, with a source-sync generator and drift checks. Shortened all method
+  names to st-* on 2026-10-15 for easier CLI invocation.
+
+- Added one portable entrypoint and 25 method guides for grounded decisions, diagnosis,
+  prioritization, systems analysis, and communication.
+- Added installation guidance, framework and boundary cases, native-host smoke receipts,
+  and controlled baseline comparisons. Evidence limits are recorded with the results.
+
 ## adoo
 
 ### 1.1.0 — 2026-07-07
