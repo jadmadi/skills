@@ -64,7 +64,13 @@ This is for local development on this repo itself. End users installing via
 automatically — that CLI also symlinks by default (`--copy` opts into real
 copies instead) and `skills update` keeps it current.
 
-## Validating
+## Validating and testing
+
+Run unit tests for repository scripts:
+
+```bash
+go test scripts/generate-structured-thinking.go scripts/generate-structured-thinking_test.go
+```
 
 Two levels:
 
