@@ -9,7 +9,7 @@ description: >-
 license: MIT
 metadata:
   author: jadmadi
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Cofounder
@@ -32,9 +32,18 @@ deliver concrete artifacts plus one 7-day next action.
 /cofounder expand <proposal>    # Run 5-gate pre-sell check before building
 ```
 
-If invoked empty (`/cofounder`) outside a repo with clear context, inspect
-nothing nonexistent and open Round 1 of grilling to place the company in Start,
-Build, Sell, or Scale.
+If invoked empty (`/cofounder`) inside a repository:
+1. Extract the business idea and current state from repo files (`README.md`,
+   `package.json`, landing copy, routes, schema, docs) and state it in 2-3
+   lines (product, inferred buyer, current stage).
+2. Ask Round 1 of grilling (2-3 questions with `Recommendation:` defaults) to
+   crystallize the idea (wedge buyer, core pain/workaround, or goal).
+3. Offer the concrete next routes (`/cofounder validate`, `/cofounder spec`,
+   `/cofounder audit`, `/cofounder outreach`, `/cofounder economics`) tailored
+   to what you found, then wait for the user's reply.
+
+If invoked empty (`/cofounder`) outside a repo with no context, open Round 1 of
+grilling to place the company in Start, Build, Sell, or Scale.
 
 ## Execution loop
 
