@@ -2,6 +2,13 @@
 
 Per-skill changes. Repo-level milestone tags (`v1.0.0`, etc.) mark release points where the collection as a whole is in a shippable state; per-skill tags (`adoo@1.1.0`, etc.) track individual skill versions and match the `metadata.version` field in each `SKILL.md`.
 
+## cofounder
+
+### 1.0.0 — 2026-11-17
+
+- Initial release. Turns the founder playbook (Start, Build, Sell, Scale) into an active `/cofounder` copilot with workspace-first fact inspection, frontier grilling (`Q1`/`Q2` rounds with `yes`-acceptable recommendations), stage-matched structured thinking, 8 hard pushback gates, and 4 on-demand reference playbooks (`start.md`, `build.md`, `sell.md`, `scale.md`).
+- Added behavioral smoke evals at `evals/cofounder/cases.md` and `evals/cofounder/inputs.json`.
+
 ## structured-thinking
 
 Unreleased, 2026-10-14.
