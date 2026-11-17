@@ -4,6 +4,10 @@ Per-skill changes. Repo-level milestone tags (`v1.0.0`, etc.) mark release point
 
 ## cofounder
 
+### 1.1.0 — 2026-11-17
+
+- Added explicit bare `/cofounder` repo-first flow: extract and state the inferred business idea and stage from repo files first, grill 2-3 crystallization questions with `Recommendation:` defaults, and offer tailored next `/cofounder` routes.
+
 ### 1.0.0 — 2026-11-17
 
 - Initial release. Turns the founder playbook (Start, Build, Sell, Scale) into an active `/cofounder` copilot with workspace-first fact inspection, frontier grilling (`Q1`/`Q2` rounds with `yes`-acceptable recommendations), stage-matched structured thinking, 8 hard pushback gates, and 4 on-demand reference playbooks (`start.md`, `build.md`, `sell.md`, `scale.md`).
