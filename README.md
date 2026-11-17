@@ -31,6 +31,20 @@ Audits for Cloudflare Workers CPU usage and D1 database performance/billing.
 - **[cf-cpu-audit](skills/cloudflare/cf-cpu-audit/SKILL.md)** — Scan a Cloudflare Workers repo for operations that excessively consume CPU time: global scope misses, memory buffering, pure-JS crypto, blocking iterations, missing `waitUntil()` deferral.
 - **[cf-d1-audit](skills/cloudflare/cf-d1-audit/SKILL.md)** — Scan a Cloudflare Workers repo for D1 patterns that inflate billing, risk timeouts, or cause consistency bugs: missing indexes, N+1 queries, unbatched round-trips, wildcard `SELECT`s, and more.
 
+## Cofounder
+
+Use [skills/cofounder/SKILL.md](skills/cofounder/SKILL.md) (`/cofounder`) as an opinionated startup cofounder across idea validation, MVP scoping, repo/security/anti-slop audits, ICP and outbound cadences, unit economics, and expansion gates.
+
+It inspects workspace files before asking questions, grills unsettled decisions in tight rounds (`Q1`, `Q2` with `yes`-acceptable recommendations), routes each stage through structured thinking, enforces 8 pushback gates, and ends with one 7-day next action. Adapts to any existing stack and works standalone or paired with `structured-thinking`, `adoo`, and `pre-flight-check`.
+
+Validate locally:
+
+```bash
+bash scripts/validate-skill.sh cofounder
+```
+
+See [evals/cofounder/cases.md](evals/cofounder/cases.md) for behavioral smoke checks.
+
 ## Structured thinking
 
 Use [skills/structured-thinking/SKILL.md](skills/structured-thinking/SKILL.md) when a decision,

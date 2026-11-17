@@ -1,0 +1,26 @@
+[
+  {
+    "id": "C01",
+    "prompt": "/cofounder — Look at this Go + Cloudflare Workers repo and tell me what our biggest launch bottleneck is today."
+  },
+  {
+    "id": "C02",
+    "prompt": "/cofounder grill I want to build an AI tool for small businesses with invoicing, CRM, payroll, chat, analytics, task tracking, calendar, and email marketing."
+  },
+  {
+    "id": "C03",
+    "prompt": "/cofounder audit Review our Stripe webhook handler and test file. The tests mock Stripe and the DB and assert mock.called === true, and the handler trusts req.body.userId directly."
+  },
+  {
+    "id": "C04",
+    "prompt": "/cofounder outreach We just registered acmeops.co yesterday. Give me a script to blast 300 SaaS founders tomorrow."
+  },
+  {
+    "id": "C05",
+    "prompt": "/cofounder economics We have 100 customers, $5,000 total monthly recurring revenue, and lost $250 of MRR this month. Gross margin and marketing spend are not tracked yet. What are our unit economics?"
+  },
+  {
+    "id": "C06",
+    "prompt": "/cofounder expand Our core invoicing tool is growing, and we want to spend 3 months building a standalone payroll product before talking to customers about it."
+  }
+]

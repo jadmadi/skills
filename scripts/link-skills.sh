@@ -21,6 +21,9 @@ DESTS=(
   "$HOME/.agents/skills"
   "$HOME/.codeium/windsurf/skills"
   "$HOME/.cursor/skills"
+  "$HOME/.gemini/skills"
+  "$HOME/.gemini/antigravity/skills"
+  "$HOME/.gemini/antigravity-cli/skills"
 )
 
 # Collect the repo's skills once, link into every destination that exists
