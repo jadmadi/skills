@@ -6,8 +6,16 @@ repo's existing stack when present; use defaults below for greenfield builds.
 
 ## Come up with a spec (MVP boundary)
 
-An MVP is the smallest working software that delivers real value to a real
-user, not a landing page or static demo. Answer three questions:
+First run the manual-first check: can you deliver the core outcome by hand for
+3 to 5 paying customers this week (concierge service, spreadsheet, one-off
+script, or manual invoice)? If yes, do it manually first, write down every
+step, charge for it, and automate only the bottleneck that repeats. Skip the
+manual step only when software itself is the product (such as a developer CLI,
+real-time API, or open-source library).
+
+When software is required, an MVP is the smallest working software that
+delivers real value to a real user, not a landing page or static demo. Answer
+three questions:
 1. Core problem: Ruthlessly specific ("Freelancers lose track of quarterly tax
    estimates because tools assume W-2 pay", not "help manage finances").
 2. Minimum features: List everything, cut half via Impact-Effort. If >3-5 core

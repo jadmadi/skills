@@ -35,7 +35,7 @@ Audits for Cloudflare Workers CPU usage and D1 database performance/billing.
 
 Use [skills/cofounder/SKILL.md](skills/cofounder/SKILL.md) (`/cofounder`) as an opinionated startup cofounder across idea validation, MVP scoping, repo/security/anti-slop audits, ICP and outbound cadences, unit economics, and expansion gates.
 
-It inspects workspace files before asking questions, grills unsettled decisions in tight rounds (`Q1`, `Q2` with `yes`-acceptable recommendations), routes each stage through structured thinking, enforces 8 pushback gates, and ends with one 7-day next action. Adapts to any existing stack and works standalone or paired with `structured-thinking`, `adoo`, and `pre-flight-check`.
+It inspects workspace files before asking questions, grills unsettled decisions in tight rounds (`Q1`, `Q2` with `yes`-acceptable recommendations), routes each stage through structured thinking, adapts idea validation to `money`, `open_source`, or `fun` goals, enforces 9 pushback gates (including manual-first proof and day-one pricing), and ends with one 7-day next action. Adapts to any existing stack and works standalone or paired with `structured-thinking`, `adoo`, and `pre-flight-check`.
 
 Validate locally:
 

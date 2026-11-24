@@ -125,6 +125,17 @@ Monthly Funnel Leak Diagnosis (fix ONE variable per cycle):
 - Verbal Commit -> Closed Won weak: unclear pricing, trust, procurement, or
   onboarding.
 
+## Pricing check (commercial goal mode)
+
+Skip this section for `open_source` or `fun` goal modes. For commercial
+products, set a concrete price before launch:
+- Anchor price to the cost of the customer's current workaround (hours wasted,
+  extra headcount, or lost revenue), not to server or token costs.
+- Start with 1 to 2 simple tiers and charge from day one (paid pilot, deposit,
+  or monthly plan). Treat "I would use it if it were free" as a `No`.
+- Test the price live on consult and close calls; raise prices when close rates
+  stay high and buyers rarely push back on cost.
+
 ## Marketing and consistent 5-part story
 
 Match format to buyer (devs = technical guides/micro-apps; operators =

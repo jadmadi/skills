@@ -22,5 +22,13 @@
   {
     "id": "C06",
     "prompt": "/cofounder expand Our core invoicing tool is growing, and we want to spend 3 months building a standalone payroll product before talking to customers about it."
+  },
+  {
+    "id": "C07",
+    "prompt": "/cofounder validate I want to release an open-source Go CLI that diffs SQLite schemas in CI and posts migration warnings on GitHub PRs."
+  },
+  {
+    "id": "C08",
+    "prompt": "/cofounder spec Help me spec a SaaS platform that sends weekly competitor price digests to boutique hotels. We want to build the full dashboard first and keep it free for 6 months to get users."
   }
 ]

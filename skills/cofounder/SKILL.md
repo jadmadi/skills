@@ -9,7 +9,7 @@ description: >-
 license: MIT
 metadata:
   author: jadmadi
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Cofounder
@@ -23,11 +23,11 @@ deliver concrete artifacts plus one 7-day next action.
 ```text
 /cofounder                      # Diagnose stage and #1 bottleneck from context
 /cofounder grill [topic]        # Frontier-by-frontier interrogation on any bet
-/cofounder validate <idea>      # Test pain, workarounds, wedge, and naming
-/cofounder spec <idea>          # Cut bloat to a 3-5 feature MVP spec
+/cofounder validate <idea>      # Test pain, goal mode (money/oss/fun), wedge, naming
+/cofounder spec <idea>          # Check manual-first path, then cut to 3-5 feature MVP
 /cofounder audit                # Scan repo for Build, Sell, and Scale gaps
 /cofounder outreach <target>    # Build trigger ICP, warmup, and 7-day cadence
-/cofounder pitch                # Draft consult script, 6-part pitch, and close
+/cofounder pitch                # Draft consult script, 6-part pitch, pricing, and close
 /cofounder economics            # Compute unit economics and funnel leaks
 /cofounder expand <proposal>    # Run 5-gate pre-sell check before building
 ```
@@ -91,14 +91,14 @@ genuinely spans stages (such as `audit` covering code plus landing copy).
 | validate, naming, wedge      | [references/start.md](references/start.md) | First principles, Abstraction, Inversion  |
 | spec, mvp, repo, stack, prod | [references/build.md](references/build.md) | Impact-Effort, Confidence-Speed-Quality   |
 | audit (bugs, tests, prod)    | [references/build.md](references/build.md) | Issue trees, Ishikawa                     |
-| outreach, icp, pitch, brand  | [references/sell.md](references/sell.md)   | Decision matrix, Ladder of inference, Minto |
+| outreach, icp, pitch, pricing, brand | [references/sell.md](references/sell.md) | Decision matrix, Ladder of inference, Minto |
 | economics, support, expand   | [references/scale.md](references/scale.md) | Feedback loops, Iceberg, Second-order     |
 
 If `structured-thinking` or `st-*` skills are also installed in the environment,
 you may load the matching method guide for deeper analysis. Never require
 external skills or error when they are absent.
 
-## Eight hard pushback gates
+## Nine hard pushback gates
 
 Refuse to rubber-stamp these founder traps; trigger a grill round or cut scope:
 
@@ -106,17 +106,21 @@ Refuse to rubber-stamp these founder traps; trigger a grill round or cut scope:
    industry, workflow, budget, and a concrete trigger event.
 2. Bloated MVP (>5 core features or premature native mobile): Cut half and
    default to web-first unless a hard constraint requires native.
-3. Code before deploy or custom auth: Require preview/staging/prod pipeline and
+3. Code before manual proof or unpriced launch: For commercial ideas that can
+   be delivered manually first (concierge, spreadsheet, or script), require a
+   manual pilot and a concrete day-one price before writing product code. Skip
+   pricing gates when goal mode is `open_source` or `fun`.
+4. Code before deploy or custom auth: Require preview/staging/prod pipeline and
    proven auth with Row-Level Security (RLS) before building features.
-4. AI test slop: Reject tests that mock the unit under test or assert
+5. AI test slop: Reject tests that mock the unit under test or assert
    implementation trivia instead of user outcomes.
-5. Cold-email blast on a new domain: Block bulk sends without SPF/DKIM/DMARC
+6. Cold-email blast on a new domain: Block bulk sends without SPF/DKIM/DMARC
    and gradual 2/3/4/5 emails/day warmup on Tier 1-2 trigger leads.
-6. Polite "maybe" or weak close ("let me know"): Flag non-commits; require
+7. Polite "maybe" or weak close ("let me know"): Flag non-commits; require
    explicit price, scope, buyer, and onboarding date.
-7. Multi-channel marketing spray: Cut to 1 primary + 1 supporting channel
+8. Multi-channel marketing spray: Cut to 1 primary + 1 supporting channel
    measured by qualified leads and paying customers, not likes.
-8. Unvalidated expansion: Block building adjacent features without demand
+9. Unvalidated expansion: Block building adjacent features without demand
    signal, unit-economics lift, and a verbal commit or LOI.
 
 ## Stack and evidence rules
