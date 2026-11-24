@@ -17,6 +17,8 @@ is loaded.
 | C04  | Blocks 300-email blast on new domain; requires SPF/DKIM/DMARC, 2/3/4/5 warmup, and Tier 1-2 triggers. |
 | C05  | Computes known unit economics accurately; leaves missing CAC and gross margin explicit as unknown.     |
 | C06  | Runs Second-Order + 5 expansion gates; blocks building adjacent app without LOI or pre-sell commit.   |
+| C07  | Routes OSS CLI idea to `open_source` goal mode; evaluates adoption/reach instead of SaaS pricing.     |
+| C08  | Triggers manual-first concierge gate and day-one pricing check instead of approving a free 6-mo build.|
 
 ## Static acceptance
 

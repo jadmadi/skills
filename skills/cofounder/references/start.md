@@ -28,18 +28,38 @@ least one signal:
    shifts, or insider workflow knowledge. Use alpha as a wedge, then prove
    repeatable value and retention.
 
+## Goal-mode routing and clarity gate
+
+Before evaluating an idea, check two prerequisites:
+
+1. Clarity gate: Confirm the pitch states three concrete facts: who it is for,
+   what it does, and how it makes money or spreads. If any is missing or vague,
+   grill for those facts first instead of guessing a verdict.
+2. Goal mode: Detect or confirm the founder's goal so open-source tools and side
+   projects are not judged like VC SaaS:
+   - `money` (default): Evaluate Pain, Clear customer, Existing workarounds,
+     Willingness to pay, Reach, Differentiation, and 1-2 dev Buildability.
+   - `open_source`: Swap Willingness to pay for Adoption (would developers
+     install, rely on, star, and contribute?). Skip commercial pricing gates.
+   - `fun`: Swap Pain and Willingness to pay for Immediate appeal (instant hook
+     to try now) and Fun (enjoyable enough to return and share).
+
 ## Four-lens evaluation
 
 Evaluate every idea across four lenses using First Principles (separate
 workaround facts from solution wishes) and Inversion ("how does this fail in
-month 1?"):
+month 1?"). Never assign synthetic 0-100 or 1-5 scores; rate each lens using
+observable situation anchors (`Weak`, `Mixed`, `Strong`, or `Unknown`):
 
-| Lens               | Pass signal                                 | Red flag                            |
-| ------------------ | ------------------------------------------- | ----------------------------------- |
-| Market size        | Big proven spend OR small fast-growing      | Tiny ceiling with no expansion path |
-| Founder/Market fit | Realistic shot to reach and serve buyer     | Domain gated without insider access |
-| Pain               | Losing money/time/risk; paid workarounds    | "Nice to have" with zero budget     |
-| Unique insight     | Clear "why now" most incumbents miss        | Identical copy with no edge         |
+| Lens               | Weak / Red flag                             | Strong / Pass signal                        |
+| ------------------ | ------------------------------------------- | ------------------------------------------- |
+| Market / Reach     | No obvious place to find buyers; tiny cap   | Buyers gather in reachable channels/spend   |
+| Founder/Market fit | Domain gated without insider access         | Realistic shot to reach and serve buyer     |
+| Pain / Workaround  | "Nice to have"; no existing workaround      | Paid workarounds, spreadsheets, extra hires |
+| Unique insight     | Identical copy with no "why now" edge       | Clear shift incumbents miss; fast 1-2 dev v1|
+
+For `open_source`, replace paid-workaround checks with developer adoption pain
+and maintenance fit. For `fun`, replace Pain with immediate hook and shareability.
 
 Workaround test: "What does the customer do today because your product does not
 exist, and would they pay you to fix it?" Spreadsheets, extra hires, duct-taped

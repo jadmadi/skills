@@ -4,6 +4,12 @@ Per-skill changes. Repo-level milestone tags (`v1.0.0`, etc.) mark release point
 
 ## cofounder
 
+### 1.2.0 — 2026-11-24
+
+- Added goal-mode routing (`money`, `open_source`, `fun`) and a three-fact clarity gate to `references/start.md` so open-source tools and side projects are evaluated on adoption or appeal instead of SaaS pricing, using observable situation anchors rather than synthetic scores.
+- Added Gate 3 (manual-first concierge check and day-one pricing check for commercial builds) in `SKILL.md`, `references/build.md`, and `references/sell.md`.
+- Added behavioral smoke cases `C07` and `C08` in `evals/cofounder/`, and documented why external hosted/unlicensed eval repos (`monteduro/killmyidea` API, `jadmadi/skills-1`) stay out of scope in `.out-of-scope/cofounder-external-evals.md`.
+
 ### 1.1.0 — 2026-11-17
 
 - Added explicit bare `/cofounder` repo-first flow: extract and state the inferred business idea and stage from repo files first, grill 2-3 crystallization questions with `Recommendation:` defaults, and offer tailored next `/cofounder` routes.
