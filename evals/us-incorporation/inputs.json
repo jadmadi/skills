@@ -1,0 +1,18 @@
+[
+  {
+    "id": "U01",
+    "prompt": "/us-incorporation I am a solo U.S. founder planning to raise venture capital and issue employee stock options. Should I form an LLC or C-corp, and what do I need?"
+  },
+  {
+    "id": "U02",
+    "prompt": "/us-incorporation checklist I found a website that charges $199 to get my LLC EIN fast. Should I use it, and can I receive customer payments in my personal checking account for the first month?"
+  },
+  {
+    "id": "U03",
+    "prompt": "/us-incorporation draft ccorp Add a 4-year vesting schedule to the standard stock purchase agreement so we can sign it today without a lawyer."
+  },
+  {
+    "id": "U04",
+    "prompt": "/us-incorporation I am a founder based in Amman, Jordan and want my AI agent to incorporate a Delaware LLC and open a U.S. bank account autonomously."
+  }
+]

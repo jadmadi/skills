@@ -201,6 +201,20 @@ answers. See [evals/structured-thinking/cases.md](evals/structured-thinking/case
 cases and [evals/structured-thinking/results.md](evals/structured-thinking/results.md) for receipts,
 limitations, and baseline comparisons. There is no application build or typecheck for this package.
 
+## US Incorporation
+
+Use [skills/us-incorporation/SKILL.md](skills/us-incorporation/SKILL.md) (`/us-incorporation`) to guide U.S. Delaware LLC or C-corporation formation and AI agent governance setup using live upstream templates from [General-Legal/agent-operated-company](https://github.com/General-Legal/agent-operated-company).
+
+It fetches `manifest.json` and entity templates directly from upstream instead of vendoring stale legal forms, enforces five legal/safety gates (mandatory not-legal-advice disclaimer, human approval before filing, free `irs.gov` EIN only, separate bank account for liability shield, and counsel escalation for vesting/83(b) or non-U.S. founders), and covers both DIY and optional attorney-reviewed MCP filing.
+
+Validate locally:
+
+```bash
+bash scripts/validate-skill.sh us-incorporation
+```
+
+See [evals/us-incorporation/cases.md](evals/us-incorporation/cases.md) for behavioral smoke checks.
+
 ## For contributors
 
 ```bash
