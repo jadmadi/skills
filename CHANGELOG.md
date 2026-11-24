@@ -67,6 +67,13 @@ Unreleased, 2026-10-14.
 
 - Initial public release. Pre-commit / pre-deploy checklist for backend and full-stack changes: typecheck/lint gates, API response envelope consistency, route ordering, schema/column verification, mutation return-value checking, frontend/backend validation alignment. Genericized from a project-specific checklist.
 
+## us-incorporation
+
+### 1.0.0 — 2026-11-24
+
+- Initial release. Thin, portable `/us-incorporation` workflow wrapping upstream `General-Legal/agent-operated-company` templates and `manifest.json` without vendoring legal `.docx` files. Includes entity triage (LLC vs C-corp), five hard safety gates (legal disclaimer, human filing approval, free `irs.gov` EIN, separate bank account shield, and vesting/83(b)/non-U.S. counsel escalation), and optional attorney-reviewed MCP setup.
+- Added behavioral smoke evals at `evals/us-incorporation/cases.md` and `evals/us-incorporation/inputs.json`.
+
 ## Repo milestones
 
 ### v1.0.0 — 2026-07-07
